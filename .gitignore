@@ -1,0 +1,12 @@
+packages/
+MoviesApp.Droid/obj/
+MoviesApp.Droid/bin/
+MoviesApp/bin/
+SAL/obj/
+MoviesApp/obj/
+SAL/bin/
+BLL/obj/
+.gitignore.txt
+BLL/bin/
+UnitTesting/bin/
+UnitTesting/obj/

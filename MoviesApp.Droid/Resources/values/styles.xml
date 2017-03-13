@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+	<style name="MoviesAppTheme.Base" parent="@android:style/Theme.Material">
+		<item name="android:windowNoTitle">true</item>
+		<item name="android:windowActionBar">false</item>
+		<item name="android:colorPrimary">@color/color_primary</item>
+		<item name="android:colorPrimaryDark">@color/color_primary_dark</item>
+		<item name="android:colorAccent">@color/color_accent</item>
+		<item name="android:windowBackground">@color/window_background</item>
+		<item name="android:textColorPrimary">@color/text_color_primary</item>
+		<item name="android:statusBarColor">@color/status_bar_color</item>
+		<item name="android:navigationBarColor">@color/navigation_bar_color</item>
+	</style>
+
+	<style name="SplashTheme.Base" parent ="@android:style/Theme.Material.NoActionBar">
+		<item name="android:windowNoTitle">true</item>
+		<item name="android:windowFullscreen">true</item>
+		<item name="android:windowBackground">@color/status_bar_color</item> <!-- TODO: Set some nice splash background image -->
+	</style>
+
+	<style name="HomeMovieImage.Base">
+		<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">fill_parent</item>
+		<item name="android:layout_weight">1</item>
+		<item name="android:adjustViewBounds">true</item>
+		<item name="android:scaleType">fitXY</item>
+		<item name="android:background">@drawable/image_frame</item>
+	</style>
+
+	<style name="HomeMovieImageLeft.Base" parent="HomeMovieImage.Base">
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="HomeMovieImageCenter.Base" parent="HomeMovieImage.Base">
+		<item name="android:layout_marginLeft">10dp</item>
+		<item name="android:gravity">center_horizontal</item>
+	</style>
+
+	<style name="HomeMovieImageRight.Base" parent="HomeMovieImage.Base">
+		<item name="android:layout_marginLeft">10dp</item>
+		<item name="android:gravity">right</item>
+	</style>
+
+	<style name="HomeMovieGroupTitle.Base">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:textColor">@color/text_color_secondary</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+		<item name="android:layout_marginBottom">4dp</item>
+	</style>
+
+	<style name="HomeListView.Base">
+		<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">fill_parent</item>
+		<item name="android:divider">#00000000</item>
+		<item name="android:listSelector">@android:color/transparent</item>
+	</style>
+
+	<style name="HomeErrorMessage.Base">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_marginTop">20dp</item>
+		<item name="android:layout_marginBottom">20dp</item>
+		<item name="android:padding">5dp</item>
+		<item name="android:gravity">center</item>
+		<item name="android:background">@color/error_background_color</item>
+		<item name="android:textColor">@color/error_text_color</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+	</style>
+</resources>
