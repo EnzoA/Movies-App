@@ -6,16 +6,59 @@ namespace MoviesApp.Core.ViewModelWrappers
 {
 	public class MovieGroupWrapper : MovieGroup
 	{
-		private ICommand _goToMovieDetailCommand;
-		public ICommand GoToMovieDetailCommand
+		#region Constructors
+
+		public MovieGroupWrapper()
+		{
+
+		}
+
+		public	MovieGroupWrapper(MovieGroup movieGroup)
+		{
+			GroupName = movieGroup?.GroupName;
+			Movies = movieGroup?.Movies;
+		}
+
+		#endregion
+
+		#region Commands
+
+		private ICommand _goToFirstMovieDetailCommand;
+		public ICommand GoToFirstMovieDetailCommand
 		{
 			get
 			{
-				return _goToMovieDetailCommand = _goToMovieDetailCommand ?? new MvxCommand(() =>
+				return _goToFirstMovieDetailCommand = _goToFirstMovieDetailCommand ?? new MvxCommand(() =>
+				{
+					
+				});
+			}
+		}
+
+		private ICommand _goToSecondMovieDetailCommand;
+		public ICommand GoToSecondMovieDetailCommand
+		{
+			get
+			{
+				return _goToSecondMovieDetailCommand = _goToSecondMovieDetailCommand ?? new MvxCommand(() =>
+				{
+					
+				});
+			}
+		}
+
+		private ICommand _goToThirdMovieDetailCommand;
+		public ICommand GoToThirdMovieDetailCommand
+		{
+			get
+			{
+				return _goToThirdMovieDetailCommand = _goToThirdMovieDetailCommand ?? new MvxCommand(() =>
 				{
 
 				});
 			}
 		}
+
+		#endregion
 	}
 }

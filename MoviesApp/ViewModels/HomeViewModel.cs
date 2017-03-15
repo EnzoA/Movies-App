@@ -76,11 +76,7 @@ namespace MoviesApp.Core.ViewModels
 				{
 					if (movieGroup != null && movieGroup.Movies != null && movieGroup.Movies.Any())
 					{
-						MovieGroups.Add(new MovieGroupWrapper
-						{
-							GroupName = movieGroup.GroupName,
-							Movies = movieGroup.Movies
-						});
+						MovieGroups.Add(new MovieGroupWrapper(movieGroup));
 						IsBusy = false;
 					}
 				});
