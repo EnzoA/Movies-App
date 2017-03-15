@@ -15,13 +15,13 @@
         android:layout_marginBottom="20dp"
         android:orientation="horizontal">
         <Mvx.MvxImageView
-            local:MvxBind="ImageUrl Movies[0].PosterPath"
+            local:MvxBind="ImageUrl Movies[0].PosterPath; TouchCommand GoToMovieDetailCommand"
             style="@style/HomeMovieImageLeft" />
         <Mvx.MvxImageView
-            local:MvxBind="ImageUrl Movies[1].PosterPath"
+            local:MvxBind="ImageUrl Movies[1].PosterPath; TouchCommand GoToMovieDetailCommand"
             style="@style/HomeMovieImageCenter" />
         <Mvx.MvxImageView
-            local:MvxBind="ImageUrl Movies[2].PosterPath"
+            local:MvxBind="ImageUrl Movies[2].PosterPath; TouchCommand GoToMovieDetailCommand"
             style="@style/HomeMovieImageRight" />
     </LinearLayout>
 </LinearLayout>

@@ -3,7 +3,7 @@ using System.Linq;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using MvvmCross.Core.ViewModels;
-using BLL.Models;
+using MoviesApp.Core.ViewModelWrappers;
 using SAL.Interfaces;
 
 namespace MoviesApp.Core.ViewModels
@@ -12,8 +12,8 @@ namespace MoviesApp.Core.ViewModels
 	{
 		#region Bindable properties
 
-		private ObservableCollection<MovieGroup> _movieGroups;
-		public ObservableCollection<MovieGroup> MovieGroups
+		private ObservableCollection<MovieGroupWrapper> _movieGroups;
+		public ObservableCollection<MovieGroupWrapper> MovieGroups
 		{
 			get { return _movieGroups; }
 			set { _movieGroups = value; RaisePropertyChanged(() => MovieGroups); }
@@ -27,7 +27,7 @@ namespace MoviesApp.Core.ViewModels
 				return _loadMovieGroupsCommand = _loadMovieGroupsCommand ?? new MvxCommand(() => LoadMovieGroups());
 			}
 		}
-
+		
 		private bool _isBusy;
 		public bool IsBusy
 		{
@@ -55,7 +55,7 @@ namespace MoviesApp.Core.ViewModels
 
 		public HomeViewModel(IServicesManager servicesManager) : base(servicesManager)
 		{
-			MovieGroups = new ObservableCollection<MovieGroup>();
+			MovieGroups = new ObservableCollection<MovieGroupWrapper>();
 			LoadMovieGroups();
 		}
 
@@ -76,7 +76,11 @@ namespace MoviesApp.Core.ViewModels
 				{
 					if (movieGroup != null && movieGroup.Movies != null && movieGroup.Movies.Any())
 					{
-						MovieGroups.Add(movieGroup);
+						MovieGroups.Add(new MovieGroupWrapper
+						{
+							GroupName = movieGroup.GroupName,
+							Movies = movieGroup.Movies
+						});
 						IsBusy = false;
 					}
 				});
