@@ -36,6 +36,7 @@
   <ItemGroup>
     <Compile Include="MVVMSetup\App.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\MovieDetailViewModel.cs" />
     <Compile Include="ViewModels\ViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModelWrappers\MovieGroupWrapper.cs" />

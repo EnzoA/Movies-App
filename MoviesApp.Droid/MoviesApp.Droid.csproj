@@ -156,6 +156,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activities\HomeActivity.cs" />
+    <Compile Include="Activities\MovieDetailActivity.cs" />
     <Compile Include="Activities\SplashActivity.cs" />
     <Compile Include="Bootstrap\DownloadCachePluginBootstrap.cs" />
     <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
@@ -173,6 +174,7 @@
     <AndroidResource Include="Resources\layout\splash.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\movie_detail.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\home.axml">
