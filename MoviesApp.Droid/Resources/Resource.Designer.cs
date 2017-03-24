@@ -203,10 +203,7 @@ namespace MoviesApp.Droid
 			public const int movie_group_item = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int splash = 2130903043;
-			
-			// aapt resource value: 0x7f030004
-			public const int toolbar = 2130903044;
+			public const int toolbar = 2130903043;
 			
 			static Layout()
 			{

@@ -1,4 +1,6 @@
-﻿using System.Windows.Input;
+﻿using System;
+using System.Linq;
+using System.Windows.Input;
 using MvvmCross.Core.ViewModels;
 using BLL.Models;
 
@@ -6,56 +8,62 @@ namespace MoviesApp.Core.ViewModelWrappers
 {
 	public class MovieGroupWrapper : MovieGroup
 	{
+		#region Private fields
+
+		private Action<int> _onMovieSelectedCallback;
+
+		#endregion
+
 		#region Constructors
 
-		public MovieGroupWrapper()
-		{
-
-		}
-
-		public	MovieGroupWrapper(MovieGroup movieGroup)
+		public MovieGroupWrapper(MovieGroup movieGroup, Action<int> onMovieSelectedCallback)
 		{
 			GroupName = movieGroup?.GroupName;
 			Movies = movieGroup?.Movies;
+			_onMovieSelectedCallback = onMovieSelectedCallback;	
 		}
 
 		#endregion
 
 		#region Commands
 
-		private ICommand _goToFirstMovieDetailCommand;
-		public ICommand GoToFirstMovieDetailCommand
+		private ICommand _selectFirstMovieCommand;
+		public ICommand SelectFirstMovieCommand
 		{
 			get
 			{
-				return _goToFirstMovieDetailCommand = _goToFirstMovieDetailCommand ?? new MvxCommand(() =>
-				{
-					
-				});
+				return _selectFirstMovieCommand = _selectFirstMovieCommand ?? new MvxCommand(() => SelectMovie(movieIndex: 0));
 			}
 		}
 
-		private ICommand _goToSecondMovieDetailCommand;
-		public ICommand GoToSecondMovieDetailCommand
+		private ICommand _selectSecondMovieCommand;
+		public ICommand SelectSecondMovieCommand
 		{
 			get
 			{
-				return _goToSecondMovieDetailCommand = _goToSecondMovieDetailCommand ?? new MvxCommand(() =>
-				{
-					
-				});
+				return _selectSecondMovieCommand = _selectSecondMovieCommand ?? new MvxCommand(() => SelectMovie(movieIndex: 1));
 			}
 		}
 
-		private ICommand _goToThirdMovieDetailCommand;
-		public ICommand GoToThirdMovieDetailCommand
+		private ICommand _selectThirdMovieCommand;
+		public ICommand SelectThirdMovieCommand
 		{
 			get
 			{
-				return _goToThirdMovieDetailCommand = _goToThirdMovieDetailCommand ?? new MvxCommand(() =>
-				{
+				return _selectThirdMovieCommand = _selectThirdMovieCommand ?? new MvxCommand(() => SelectMovie(movieIndex: 2));
+			}
+		}
 
-				});
+		#endregion
+
+		#region Private methods
+
+		private void SelectMovie(int movieIndex)
+		{
+			if (Movies != null && Movies.Count() >= movieIndex + 1)
+			{
+				var movieId = Movies.ElementAt(movieIndex).Id;
+				_onMovieSelectedCallback?.Invoke(movieId);
 			}
 		}
 

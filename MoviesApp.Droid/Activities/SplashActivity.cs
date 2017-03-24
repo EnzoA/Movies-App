@@ -1,6 +1,4 @@
 using Android.App;
-using Android.OS;
-using Android.Content;
 using Android.Content.PM;
 using MvvmCross.Droid.Views;
 
@@ -11,20 +9,8 @@ namespace MoviesApp.Droid.Activities
 			  MainLauncher = true,
 			  NoHistory = true,
 			  ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-	public class SplashActivity : MvxActivity
+	public class SplashActivity : MvxSplashScreenActivity
 	{
-		protected override void OnCreate(Bundle savedInstanceState)
-		{
-			base.OnCreate(savedInstanceState);
-		}
-
-		protected override void OnResume()
-		{
-			base.OnResume();
-
-			var setup = new Setup(this);
-
-			StartActivity(new Intent(Application.Context, typeof(HomeActivity)));
-		}
+		
 	}
 }

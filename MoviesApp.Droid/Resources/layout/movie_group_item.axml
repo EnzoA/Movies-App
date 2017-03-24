@@ -15,13 +15,13 @@
         android:layout_marginBottom="20dp"
         android:orientation="horizontal">
         <Mvx.MvxImageView
-            local:MvxBind="ImageUrl Movies[0].PosterPath; Click GoToFirstMovieDetailCommand"
+            local:MvxBind="ImageUrl Movies[0].PosterPath; Click SelectFirstMovieCommand"
             style="@style/HomeMovieImageLeft" />
         <Mvx.MvxImageView
-            local:MvxBind="ImageUrl Movies[1].PosterPath; Click GoToSecondMovieDetailCommand"
+            local:MvxBind="ImageUrl Movies[1].PosterPath; Click SelectSecondMovieCommand"
             style="@style/HomeMovieImageCenter" />
         <Mvx.MvxImageView
-            local:MvxBind="ImageUrl Movies[2].PosterPath; Click GoToThirdMovieDetailCommand"
+            local:MvxBind="ImageUrl Movies[2].PosterPath; Click SelectThirdMovieCommand"
             style="@style/HomeMovieImageRight" />
     </LinearLayout>
 </LinearLayout>

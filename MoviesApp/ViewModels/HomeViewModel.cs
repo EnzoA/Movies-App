@@ -3,8 +3,8 @@ using System.Linq;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using MvvmCross.Core.ViewModels;
-using MoviesApp.Core.ViewModelWrappers;
 using SAL.Interfaces;
+using MoviesApp.Core.ViewModelWrappers;
 
 namespace MoviesApp.Core.ViewModels
 {
@@ -76,7 +76,11 @@ namespace MoviesApp.Core.ViewModels
 				{
 					if (movieGroup != null && movieGroup.Movies != null && movieGroup.Movies.Any())
 					{
-						MovieGroups.Add(new MovieGroupWrapper(movieGroup));
+						var movieGroupWrapper = new MovieGroupWrapper(movieGroup, onMovieSelectedCallback: movieId =>
+						{
+							ShowViewModel<MovieDetailViewModel>(new { movieId = movieId });
+						});
+						MovieGroups.Add(movieGroupWrapper);
 						IsBusy = false;
 					}
 				});

@@ -7,7 +7,6 @@ namespace MoviesApp.Droid.Activities
 {
 	[Activity(Label = "Movies App",
 			  Icon = "@drawable/icon",
-			  NoHistory = true,
 			  Theme = "@style/MoviesAppTheme")]
 	public class HomeActivity : MvxActivity
 	{
