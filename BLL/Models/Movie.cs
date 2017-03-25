@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
 
 namespace BLL.Models
 {
@@ -12,5 +13,11 @@ namespace BLL.Models
 
 		[JsonProperty("poster_path")]
 		public string PosterPath { get; set; }
+
+		[JsonProperty("overview")]
+		public string Overview { get; set; }
+
+		[JsonProperty("release_date")]
+		public DateTime ReleaseDate { get; set; }
 	}
 }

@@ -10,13 +10,13 @@ namespace MoviesApp.Core.ViewModelWrappers
 	{
 		#region Private fields
 
-		private Action<int> _onMovieSelectedCallback;
+		private Action<Movie> _onMovieSelectedCallback;
 
 		#endregion
 
 		#region Constructors
 
-		public MovieGroupWrapper(MovieGroup movieGroup, Action<int> onMovieSelectedCallback)
+		public MovieGroupWrapper(MovieGroup movieGroup, Action<Movie> onMovieSelectedCallback)
 		{
 			GroupName = movieGroup?.GroupName;
 			Movies = movieGroup?.Movies;
@@ -62,8 +62,8 @@ namespace MoviesApp.Core.ViewModelWrappers
 		{
 			if (Movies != null && Movies.Count() >= movieIndex + 1)
 			{
-				var movieId = Movies.ElementAt(movieIndex).Id;
-				_onMovieSelectedCallback?.Invoke(movieId);
+				var selectedMovie = Movies.ElementAt(movieIndex);
+				_onMovieSelectedCallback?.Invoke(selectedMovie);
 			}
 		}
 

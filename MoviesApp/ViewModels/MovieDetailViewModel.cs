@@ -1,16 +1,22 @@
-﻿using SAL.Interfaces;
+﻿using BLL.Models;
+using SAL.Interfaces;
 
 namespace MoviesApp.Core.ViewModels
 {
 	public class MovieDetailViewModel : ViewModel
 	{
-		#region Private fields
+		#region Bindable properties
 
-		private int _movieId;
+		private Movie _selectedMovie;
+		public Movie SelectedMovie
+		{
+			get { return _selectedMovie; }
+			set { _selectedMovie = value; RaisePropertyChanged(() => SelectedMovie); }
+		}
 
 		#endregion
 		
-		#region Constructor
+		#region Constructors
 
 		public MovieDetailViewModel(IServicesManager servicesManager) : base(servicesManager)
 		{
@@ -21,9 +27,9 @@ namespace MoviesApp.Core.ViewModels
 
 		#region Public methods
 
-		public void Init(int movieId)
+		public void Init(Movie selectedMovie)
 		{
-			_movieId = movieId;
+			SelectedMovie = selectedMovie;
 		}
 
 		#endregion

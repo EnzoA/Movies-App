@@ -51,7 +51,7 @@ namespace MoviesApp.Core.ViewModels
 
 		#endregion
 
-		#region Constructor
+		#region Constructors
 
 		public HomeViewModel(IServicesManager servicesManager) : base(servicesManager)
 		{
@@ -76,9 +76,9 @@ namespace MoviesApp.Core.ViewModels
 				{
 					if (movieGroup != null && movieGroup.Movies != null && movieGroup.Movies.Any())
 					{
-						var movieGroupWrapper = new MovieGroupWrapper(movieGroup, onMovieSelectedCallback: movieId =>
+						var movieGroupWrapper = new MovieGroupWrapper(movieGroup, onMovieSelectedCallback: selectedMovie =>
 						{
-							ShowViewModel<MovieDetailViewModel>(new { movieId = movieId });
+							ShowViewModel<MovieDetailViewModel>(selectedMovie);
 						});
 						MovieGroups.Add(movieGroupWrapper);
 						IsBusy = false;
