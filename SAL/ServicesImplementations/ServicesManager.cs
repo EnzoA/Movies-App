@@ -6,7 +6,6 @@ using Newtonsoft.Json.Linq;
 using BLL.Models;
 using BLL.ExtensionMethods;
 using SAL.Interfaces;
-using System.Linq;
 
 namespace SAL.ServicesImplementations
 {
@@ -72,7 +71,13 @@ namespace SAL.ServicesImplementations
 				var jsonObject = JObject.Parse(content);
 				var results = jsonObject.Property("results").Value.ToString();
 
-				movies = JsonConvert.DeserializeObject<List<Movie>>(results);
+				var settings = new JsonSerializerSettings
+				{
+					NullValueHandling = NullValueHandling.Ignore,
+					MissingMemberHandling = MissingMemberHandling.Ignore
+				};
+				movies = JsonConvert.DeserializeObject<List<Movie>>(results, settings);
+				System.Diagnostics.Debug.WriteLine(results.ToString());
 			}
 			catch (Exception ex)
 			{

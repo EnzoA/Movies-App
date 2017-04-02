@@ -7,7 +7,8 @@
 		android:padding="10dp">
 
 	<LinearLayout android:layout_width="match_parent"
-								android:layout_height="wrap_content">
+								android:layout_height="wrap_content"
+								android:orientation="horizontal">
 		<Mvx.MvxImageView local:MvxBind="ImageUrl SelectedMovie.PosterPath"
 											android:layout_width="0dp"
 											android:layout_height="wrap_content"
@@ -16,13 +17,20 @@
 											android:adjustViewBounds="true"
 											android:scaleType="fitXY"
 											android:background="@drawable/image_frame" />
+
+		<LinearLayout android:layout_width="0dp"
+									android:layout_height="wrap_content"
+									android:orientation="vertical"
+									android:layout_weight="0.6"
+									android:layout_gravity="right"
+									android:layout_marginLeft="10dp">
 			<TextView local:MvxBind="Text SelectedMovie.Title"
-								android:layout_width="0dp"
-								android:layout_height="wrap_content"
-								android:layout_weight="0.6"
-								android:layout_gravity="right"
-								android:gravity="center"
-								android:layout_marginTop="15dp" />
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content" />
+			<TextView local:MvxBind="Text SelectedMovie.ReleaseDate, Converter=ReleaseDate"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content" />
+		</LinearLayout>
 
 	</LinearLayout>
 
