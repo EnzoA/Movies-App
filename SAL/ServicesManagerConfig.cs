@@ -17,5 +17,9 @@
 		public static readonly string POPULAR_URL = string.Format(MOVIE_GROUPS_BASE_URL, "popular", DEFAULT_LANGUAGE, 1);
 
 		public static readonly string NOW_PLAYING_URL = string.Format(MOVIE_GROUPS_BASE_URL, "now_playing", DEFAULT_LANGUAGE, 1);
+
+		public static readonly string SIMILAR_MOVIES_BASE_URL = $"{BASE_URL}{{0}}/similar?api_key={API_KEY}&language={{1}}&page={{2}}";
+
+		public static readonly string SIMILAR_MOVIES_URL = string.Format(SIMILAR_MOVIES_BASE_URL, "{0}", DEFAULT_LANGUAGE, 1);
 	}
 }

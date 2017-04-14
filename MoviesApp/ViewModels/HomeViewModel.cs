@@ -85,7 +85,7 @@ namespace MoviesApp.Core.ViewModels
 					}
 				});
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 				HasThrownError = true;
 				ErrorMessage = "An error has occurred while loading some of the movies"; // TODO: Use a Resx file

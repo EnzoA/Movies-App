@@ -10,5 +10,7 @@ namespace SAL.Interfaces
 		Task<IEnumerable<MovieGroup>> GetMovieGroupsAsync();
 
 		Task<IEnumerable<MovieGroup>> GetMovieGroupsAsync(Action<MovieGroup> onEachMovieGroupCallback);
+
+		Task<IEnumerable<Movie>> GetSimilarMovies(int movieId);
 	}
 }

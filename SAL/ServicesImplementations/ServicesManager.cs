@@ -56,6 +56,37 @@ namespace SAL.ServicesImplementations
 			return movieGroups;
 		}
 
+		public async Task<IEnumerable<Movie>> GetSimilarMovies(int movieId)
+		{
+			List<Movie> similarMovies = null;
+			var url = string.Format(ServicesManagerConfig.SIMILAR_MOVIES_URL, movieId);
+
+			try
+			{
+				var response = await _httpClient.GetAsync(url);
+				var content = await response.Content.ReadAsStringAsync();
+				var jsonObject = JObject.Parse(content);
+				var results = jsonObject.Property("results").Value.ToString();
+
+				var settings = new JsonSerializerSettings
+				{
+					NullValueHandling = NullValueHandling.Ignore,
+					MissingMemberHandling = MissingMemberHandling.Ignore
+				};
+				similarMovies = JsonConvert.DeserializeObject<List<Movie>>(results, settings);
+
+				var baseUrl = TMDbApiConfig.BASE_URL;
+				var backdropSize = TMDbApiConfig.BACKDROP_SIZE;
+				similarMovies?.ForEach(m => m.PosterPath = $"{baseUrl}{backdropSize}{m.PosterPath}");
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+
+			return similarMovies;
+		}
+
 		#endregion
 
 		#region Private methods
@@ -77,7 +108,6 @@ namespace SAL.ServicesImplementations
 					MissingMemberHandling = MissingMemberHandling.Ignore
 				};
 				movies = JsonConvert.DeserializeObject<List<Movie>>(results, settings);
-				System.Diagnostics.Debug.WriteLine(results.ToString());
 			}
 			catch (Exception ex)
 			{
