@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows.Input;
 using BLL.Models;
+using MvvmCross.Core.ViewModels;
 using SAL.Interfaces;
 
 namespace MoviesApp.Core.ViewModels
@@ -43,6 +45,33 @@ namespace MoviesApp.Core.ViewModels
 		{
 			get { return _errorMessage; }
 			set { _errorMessage = value; RaisePropertyChanged(() => ErrorMessage); }
+		}
+
+		private ICommand _selectFirstMovieCommand;
+		public ICommand SelectFirstMovieCommand
+		{
+			get
+			{
+				return _selectFirstMovieCommand = _selectFirstMovieCommand ?? new MvxCommand(() => SelectMovie(movieIndex: 0));
+			}
+		}
+
+		private ICommand _selectSecondMovieCommand;
+		public ICommand SelectSecondMovieCommand
+		{
+			get
+			{
+				return _selectSecondMovieCommand = _selectSecondMovieCommand ?? new MvxCommand(() => SelectMovie(movieIndex: 1));
+			}
+		}
+
+		private ICommand _selectThirdMovieCommand;
+		public ICommand SelectThirdMovieCommand
+		{
+			get
+			{
+				return _selectThirdMovieCommand = _selectThirdMovieCommand ?? new MvxCommand(() => SelectMovie(movieIndex: 2));
+			}
 		}
 
 		#endregion
@@ -92,7 +121,16 @@ namespace MoviesApp.Core.ViewModels
 				IsBusy = false;
 			}
 		}
-
+		
+		private void SelectMovie(int movieIndex)
+		{
+			if (SimilarMovies != null && SimilarMovies.Count() >= movieIndex + 1)
+			{
+				var selectedMovie = SimilarMovies.ElementAt(movieIndex);
+				ShowViewModel<MovieDetailViewModel>(selectedMovie);
+			}
+		}
+		
 		#endregion
 	}
 }
