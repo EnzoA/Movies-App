@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <resources>
-	<style name="MoviesAppTheme" parent="@android:style/Theme.Material">
+	<!-- THEMES -->
+	<style name="MoviesAppTheme" parent="@android:style/Theme.Material.Light.NoActionBar">
 		<item name="android:windowNoTitle">true</item>
-		<item name="android:windowActionBar">false</item>
 		<item name="android:colorPrimary">@color/color_primary</item>
 		<item name="android:colorPrimaryDark">@color/color_primary_dark</item>
 		<item name="android:colorAccent">@color/color_accent</item>
@@ -12,12 +12,13 @@
 		<item name="android:navigationBarColor">@color/navigation_bar_color</item>
 	</style>
 
-	<style name="SplashTheme" parent ="@android:style/Theme.Material.NoActionBar">
+	<style name="SplashTheme" parent ="@android:style/Theme.Material.Light.NoActionBar">
 		<item name="android:windowNoTitle">true</item>
 		<item name="android:windowFullscreen">true</item>
 		<item name="android:windowBackground">@color/status_bar_color</item> <!-- TODO: Set some nice splash background image -->
 	</style>
 
+	<!-- HOME IMAGE -->
 	<style name="HomeMovieImage">
 		<item name="android:layout_width">fill_parent</item>
 		<item name="android:layout_height">fill_parent</item>
@@ -41,6 +42,7 @@
 		<item name="android:gravity">right</item>
 	</style>
 
+	<!-- HOME MESSAGES AND LIST VIEW -->
 	<style name="HomeMovieGroupTitle">
 		<item name="android:layout_width">wrap_content</item>
 		<item name="android:layout_height">wrap_content</item>
@@ -69,4 +71,26 @@
 		<item name="android:textStyle">bold</item>
 		<item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
 	</style>
+
+	<!-- MOVIE DETAIL SELECTED MOVIE IMAGE -->
+	<style name="SelectedMovieImage">
+		<item name="android:layout_width">0dp</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_weight">0.4</item>
+		<item name="android:layout_gravity">left</item>
+		<item name="android:adjustViewBounds">true</item>
+		<item name="android:scaleType">fitXY</item>
+		<item name="android:background">@drawable/image_frame</item>
+	</style>
+
+	<!-- MOVIE DETAIL DESCRIPTION LAYOUT -->
+	<style name="SelectedMovieDescriptionLayout">
+		<item name="android:layout_width">0dp</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:orientation">vertical</item>
+		<item name="android:layout_weight">0.6</item>
+		<item name="android:layout_gravity">right</item>
+		<item name="android:layout_marginLeft">10dp</item>
+	</style>
+
 </resources>
