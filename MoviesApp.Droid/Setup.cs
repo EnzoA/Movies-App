@@ -1,13 +1,11 @@
 using Android.Content;
-using Android.Widget;
-using MvvmCross.Binding.Bindings.Target.Construction;
 using MvvmCross.Core.ViewModels;
-using MvvmCross.Droid.Platform;
 using MoviesApp.Core.MVVMSetup;
+using MvvmCross.Droid.Support.V7.AppCompat;
 
 namespace MoviesApp.Droid
 {
-	public class Setup : MvxAndroidSetup
+	public class Setup : MvxAppCompatSetup
 	{
 		public Setup(Context applicationContext) : base(applicationContext)
 		{

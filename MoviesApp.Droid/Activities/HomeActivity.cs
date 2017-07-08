@@ -1,14 +1,14 @@
 ﻿using Android.App;
 using Android.OS;
-using MvvmCross.Droid.Views;
 using MoviesApp.Core.ViewModels;
+using MvvmCross.Droid.Support.V7.AppCompat;
 
 namespace MoviesApp.Droid.Activities
 {
 	[Activity(Label = "Movies App",
 			  Icon = "@drawable/icon",
 			  Theme = "@style/MoviesAppTheme")]
-	public class HomeActivity : MvxActivity
+	public class HomeActivity : MvxAppCompatActivity
 	{
 		public new HomeViewModel ViewModel
 		{

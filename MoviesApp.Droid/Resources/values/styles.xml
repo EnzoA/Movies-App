@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <resources>
 	<!-- THEMES -->
-	<style name="MoviesAppTheme" parent="@android:style/Theme.Material.Light.NoActionBar">
+	<style name="MoviesAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
 		<item name="android:windowNoTitle">true</item>
 		<item name="android:colorPrimary">@color/color_primary</item>
 		<item name="android:colorPrimaryDark">@color/color_primary_dark</item>
@@ -12,7 +12,7 @@
 		<item name="android:navigationBarColor">@color/navigation_bar_color</item>
 	</style>
 
-	<style name="SplashTheme" parent ="@android:style/Theme.Material.Light.NoActionBar">
+	<style name="SplashTheme" parent ="Theme.AppCompat.Light.NoActionBar">
 		<item name="android:windowNoTitle">true</item>
 		<item name="android:windowFullscreen">true</item>
 		<item name="android:windowBackground">@color/status_bar_color</item> <!-- TODO: Set some nice splash background image -->

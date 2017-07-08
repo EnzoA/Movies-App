@@ -1,6 +1,6 @@
 using Android.App;
 using Android.Content.PM;
-using MvvmCross.Droid.Views;
+using MvvmCross.Droid.Support.V7.AppCompat;
 
 namespace MoviesApp.Droid.Activities
 {
@@ -9,7 +9,7 @@ namespace MoviesApp.Droid.Activities
 			  MainLauncher = true,
 			  NoHistory = true,
 			  ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-	public class SplashActivity : MvxSplashScreenActivity
+	public class SplashActivity : MvxSplashScreenAppCompatActivity
 	{
 		
 	}
