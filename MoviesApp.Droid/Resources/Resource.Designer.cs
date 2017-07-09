@@ -4453,6 +4453,12 @@ namespace MoviesApp.Droid
 			// aapt resource value: 0x7f080168
 			public const int SelectedMovieImage = 2131231080;
 			
+			// aapt resource value: 0x7f08016b
+			public const int SelectedMovieOverview = 2131231083;
+			
+			// aapt resource value: 0x7f08016a
+			public const int SelectedMovieTitle = 2131231082;
+			
 			// aapt resource value: 0x7f080160
 			public const int SplashTheme = 2131231072;
 			

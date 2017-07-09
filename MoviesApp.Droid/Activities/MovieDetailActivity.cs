@@ -7,8 +7,7 @@ using MvvmCross.Droid.Support.V7.AppCompat;
 
 namespace MoviesApp.Droid.Activities
 {
-	[Activity(Label = "Movie detail",
-			  Theme = "@style/MoviesAppTheme")]
+	[Activity(Theme = "@style/MoviesAppTheme")]
 	public class MovieDetailActivity : MvxAppCompatActivity
 	{
 		public new MovieDetailViewModel ViewModel
