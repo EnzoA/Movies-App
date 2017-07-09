@@ -2285,44 +2285,44 @@ namespace MoviesApp.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f0a0045
-			public const int abc_background_cache_hint_selector_material_dark = 2131361861;
-			
-			// aapt resource value: 0x7f0a0046
-			public const int abc_background_cache_hint_selector_material_light = 2131361862;
-			
-			// aapt resource value: 0x7f0a0047
-			public const int abc_btn_colored_borderless_text_material = 2131361863;
-			
-			// aapt resource value: 0x7f0a0048
-			public const int abc_btn_colored_text_material = 2131361864;
-			
 			// aapt resource value: 0x7f0a0049
-			public const int abc_color_highlight_material = 2131361865;
+			public const int abc_background_cache_hint_selector_material_dark = 2131361865;
 			
 			// aapt resource value: 0x7f0a004a
-			public const int abc_hint_foreground_material_dark = 2131361866;
+			public const int abc_background_cache_hint_selector_material_light = 2131361866;
 			
 			// aapt resource value: 0x7f0a004b
-			public const int abc_hint_foreground_material_light = 2131361867;
+			public const int abc_btn_colored_borderless_text_material = 2131361867;
+			
+			// aapt resource value: 0x7f0a004c
+			public const int abc_btn_colored_text_material = 2131361868;
+			
+			// aapt resource value: 0x7f0a004d
+			public const int abc_color_highlight_material = 2131361869;
+			
+			// aapt resource value: 0x7f0a004e
+			public const int abc_hint_foreground_material_dark = 2131361870;
+			
+			// aapt resource value: 0x7f0a004f
+			public const int abc_hint_foreground_material_light = 2131361871;
 			
 			// aapt resource value: 0x7f0a0001
 			public const int abc_input_method_navigation_guard = 2131361793;
 			
-			// aapt resource value: 0x7f0a004c
-			public const int abc_primary_text_disable_only_material_dark = 2131361868;
-			
-			// aapt resource value: 0x7f0a004d
-			public const int abc_primary_text_disable_only_material_light = 2131361869;
-			
-			// aapt resource value: 0x7f0a004e
-			public const int abc_primary_text_material_dark = 2131361870;
-			
-			// aapt resource value: 0x7f0a004f
-			public const int abc_primary_text_material_light = 2131361871;
-			
 			// aapt resource value: 0x7f0a0050
-			public const int abc_search_url_text = 2131361872;
+			public const int abc_primary_text_disable_only_material_dark = 2131361872;
+			
+			// aapt resource value: 0x7f0a0051
+			public const int abc_primary_text_disable_only_material_light = 2131361873;
+			
+			// aapt resource value: 0x7f0a0052
+			public const int abc_primary_text_material_dark = 2131361874;
+			
+			// aapt resource value: 0x7f0a0053
+			public const int abc_primary_text_material_light = 2131361875;
+			
+			// aapt resource value: 0x7f0a0054
+			public const int abc_search_url_text = 2131361876;
 			
 			// aapt resource value: 0x7f0a0002
 			public const int abc_search_url_text_normal = 2131361794;
@@ -2333,32 +2333,32 @@ namespace MoviesApp.Droid
 			// aapt resource value: 0x7f0a0004
 			public const int abc_search_url_text_selected = 2131361796;
 			
-			// aapt resource value: 0x7f0a0051
-			public const int abc_secondary_text_material_dark = 2131361873;
-			
-			// aapt resource value: 0x7f0a0052
-			public const int abc_secondary_text_material_light = 2131361874;
-			
-			// aapt resource value: 0x7f0a0053
-			public const int abc_tint_btn_checkable = 2131361875;
-			
-			// aapt resource value: 0x7f0a0054
-			public const int abc_tint_default = 2131361876;
-			
 			// aapt resource value: 0x7f0a0055
-			public const int abc_tint_edittext = 2131361877;
+			public const int abc_secondary_text_material_dark = 2131361877;
 			
 			// aapt resource value: 0x7f0a0056
-			public const int abc_tint_seek_thumb = 2131361878;
+			public const int abc_secondary_text_material_light = 2131361878;
 			
 			// aapt resource value: 0x7f0a0057
-			public const int abc_tint_spinner = 2131361879;
+			public const int abc_tint_btn_checkable = 2131361879;
 			
 			// aapt resource value: 0x7f0a0058
-			public const int abc_tint_switch_thumb = 2131361880;
+			public const int abc_tint_default = 2131361880;
 			
 			// aapt resource value: 0x7f0a0059
-			public const int abc_tint_switch_track = 2131361881;
+			public const int abc_tint_edittext = 2131361881;
+			
+			// aapt resource value: 0x7f0a005a
+			public const int abc_tint_seek_thumb = 2131361882;
+			
+			// aapt resource value: 0x7f0a005b
+			public const int abc_tint_spinner = 2131361883;
+			
+			// aapt resource value: 0x7f0a005c
+			public const int abc_tint_switch_thumb = 2131361884;
+			
+			// aapt resource value: 0x7f0a005d
+			public const int abc_tint_switch_track = 2131361885;
 			
 			// aapt resource value: 0x7f0a0005
 			public const int accent_material_dark = 2131361797;
@@ -2402,14 +2402,26 @@ namespace MoviesApp.Droid
 			// aapt resource value: 0x7f0a0012
 			public const int button_material_light = 2131361810;
 			
-			// aapt resource value: 0x7f0a003d
-			public const int color_accent = 2131361853;
+			// aapt resource value: 0x7f0a0041
+			public const int color_accent = 2131361857;
 			
 			// aapt resource value: 0x7f0a003b
 			public const int color_primary = 2131361851;
 			
 			// aapt resource value: 0x7f0a003c
 			public const int color_primary_dark = 2131361852;
+			
+			// aapt resource value: 0x7f0a003d
+			public const int color_primary_light = 2131361853;
+			
+			// aapt resource value: 0x7f0a003e
+			public const int color_secondary = 2131361854;
+			
+			// aapt resource value: 0x7f0a003f
+			public const int color_secondary_dark = 2131361855;
+			
+			// aapt resource value: 0x7f0a0040
+			public const int color_secondary_light = 2131361856;
 			
 			// aapt resource value: 0x7f0a0013
 			public const int dim_foreground_disabled_material_dark = 2131361811;
@@ -2423,11 +2435,11 @@ namespace MoviesApp.Droid
 			// aapt resource value: 0x7f0a0016
 			public const int dim_foreground_material_light = 2131361814;
 			
-			// aapt resource value: 0x7f0a0043
-			public const int error_background_color = 2131361859;
+			// aapt resource value: 0x7f0a0047
+			public const int error_background_color = 2131361863;
 			
-			// aapt resource value: 0x7f0a0044
-			public const int error_text_color = 2131361860;
+			// aapt resource value: 0x7f0a0048
+			public const int error_text_color = 2131361864;
 			
 			// aapt resource value: 0x7f0a0017
 			public const int foreground_material_dark = 2131361815;
@@ -2477,8 +2489,8 @@ namespace MoviesApp.Droid
 			// aapt resource value: 0x7f0a0026
 			public const int material_grey_900 = 2131361830;
 			
-			// aapt resource value: 0x7f0a0042
-			public const int navigation_bar_color = 2131361858;
+			// aapt resource value: 0x7f0a0046
+			public const int navigation_bar_color = 2131361862;
 			
 			// aapt resource value: 0x7f0a0000
 			public const int notification_action_color_filter = 2131361792;
@@ -2531,8 +2543,8 @@ namespace MoviesApp.Droid
 			// aapt resource value: 0x7f0a0036
 			public const int secondary_text_disabled_material_light = 2131361846;
 			
-			// aapt resource value: 0x7f0a0041
-			public const int status_bar_color = 2131361857;
+			// aapt resource value: 0x7f0a0045
+			public const int status_bar_color = 2131361861;
 			
 			// aapt resource value: 0x7f0a0037
 			public const int switch_thumb_disabled_material_dark = 2131361847;
@@ -2540,11 +2552,11 @@ namespace MoviesApp.Droid
 			// aapt resource value: 0x7f0a0038
 			public const int switch_thumb_disabled_material_light = 2131361848;
 			
-			// aapt resource value: 0x7f0a005a
-			public const int switch_thumb_material_dark = 2131361882;
+			// aapt resource value: 0x7f0a005e
+			public const int switch_thumb_material_dark = 2131361886;
 			
-			// aapt resource value: 0x7f0a005b
-			public const int switch_thumb_material_light = 2131361883;
+			// aapt resource value: 0x7f0a005f
+			public const int switch_thumb_material_light = 2131361887;
 			
 			// aapt resource value: 0x7f0a0039
 			public const int switch_thumb_normal_material_dark = 2131361849;
@@ -2552,14 +2564,14 @@ namespace MoviesApp.Droid
 			// aapt resource value: 0x7f0a003a
 			public const int switch_thumb_normal_material_light = 2131361850;
 			
-			// aapt resource value: 0x7f0a003f
-			public const int text_color_primary = 2131361855;
+			// aapt resource value: 0x7f0a0043
+			public const int text_color_primary = 2131361859;
 			
-			// aapt resource value: 0x7f0a0040
-			public const int text_color_secondary = 2131361856;
+			// aapt resource value: 0x7f0a0044
+			public const int text_color_secondary = 2131361860;
 			
-			// aapt resource value: 0x7f0a003e
-			public const int window_background = 2131361854;
+			// aapt resource value: 0x7f0a0042
+			public const int window_background = 2131361858;
 			
 			static Color()
 			{
@@ -3350,6 +3362,9 @@ namespace MoviesApp.Droid
 			// aapt resource value: 0x7f0b005e
 			public const int media_actions = 2131427422;
 			
+			// aapt resource value: 0x7f0b0070
+			public const int menu_search = 2131427440;
+			
 			// aapt resource value: 0x7f0b001e
 			public const int middle = 2131427358;
 			
@@ -3719,11 +3734,30 @@ namespace MoviesApp.Droid
 			}
 		}
 		
+		public partial class Menu
+		{
+			
+			// aapt resource value: 0x7f0d0000
+			public const int app_menu = 2131558400;
+			
+			static Menu()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Menu()
+			{
+			}
+		}
+		
 		public partial class String
 		{
 			
 			// aapt resource value: 0x7f060021
 			public const int ApplicationName = 2131099681;
+			
+			// aapt resource value: 0x7f060022
+			public const int SearchMenuIcon = 2131099682;
 			
 			// aapt resource value: 0x7f060000
 			public const int abc_action_bar_home_description = 2131099648;

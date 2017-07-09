@@ -1,12 +1,13 @@
 ﻿using Android.App;
 using Android.OS;
+using Android.Support.V7.Widget;
+using Android.Views;
 using MoviesApp.Core.ViewModels;
 using MvvmCross.Droid.Support.V7.AppCompat;
 
 namespace MoviesApp.Droid.Activities
 {
-	[Activity(Label = "Movies App",
-			  Icon = "@drawable/icon",
+	[Activity(Icon = "@drawable/icon",
 			  Theme = "@style/MoviesAppTheme")]
 	public class HomeActivity : MvxAppCompatActivity
 	{
@@ -20,6 +21,14 @@ namespace MoviesApp.Droid.Activities
 		{
 			base.OnCreate(bundle);
 			SetContentView (Resource.Layout.home);
+			var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+			SetSupportActionBar(toolbar);
+		}
+
+		public override bool OnCreateOptionsMenu(IMenu menu)
+		{
+			MenuInflater.Inflate(Resource.Menu.app_menu, menu);
+			return base.OnCreateOptionsMenu(menu);
 		}
 	}
 }

@@ -1,13 +1,15 @@
 using Android.App;
 using Android.OS;
+using Android.Views;
+using Android.Support.V7.Widget;
 using MoviesApp.Core.ViewModels;
-using MvvmCross.Droid.Views;
+using MvvmCross.Droid.Support.V7.AppCompat;
 
 namespace MoviesApp.Droid.Activities
 {
 	[Activity(Label = "Movie detail",
-			  Theme = "@android:style/Theme.Material")]
-	public class MovieDetailActivity : MvxActivity
+			  Theme = "@style/MoviesAppTheme")]
+	public class MovieDetailActivity : MvxAppCompatActivity
 	{
 		public new MovieDetailViewModel ViewModel
 		{
@@ -19,6 +21,14 @@ namespace MoviesApp.Droid.Activities
 		{
 			base.OnCreate(savedInstanceState);
 			SetContentView(Resource.Layout.movie_detail);
+			var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+			SetSupportActionBar(toolbar);
+		}
+
+		public override bool OnCreateOptionsMenu(IMenu menu)
+		{
+			MenuInflater.Inflate(Resource.Menu.app_menu, menu);
+			return base.OnCreateOptionsMenu(menu);
 		}
 	}
 }
