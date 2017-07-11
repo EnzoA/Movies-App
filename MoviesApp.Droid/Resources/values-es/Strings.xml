@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?> 
 <!-- Spanish strings -->
 <resources>
-    <string name="ApplicationName">Movies App</string>
-	  <string name="SearchMenuIcon">Buscar</string>
+    <string name="application_name">Movies App</string>
+	  <string name="search_menu_icon">Buscar</string>
 </resources>
