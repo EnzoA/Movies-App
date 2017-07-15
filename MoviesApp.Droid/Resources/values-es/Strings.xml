@@ -3,4 +3,5 @@
 <resources>
     <string name="application_name">Movies App</string>
 	  <string name="search_menu_icon">Buscar</string>
+		<string name="search_hint">Busca películas por nombre</string>
 </resources>

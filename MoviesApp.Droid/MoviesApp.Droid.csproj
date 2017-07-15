@@ -180,6 +180,7 @@
   <ItemGroup>
     <Compile Include="Activities\HomeActivity.cs" />
     <Compile Include="Activities\MovieDetailActivity.cs" />
+    <Compile Include="Activities\SearchableActivity.cs" />
     <Compile Include="Activities\SplashActivity.cs" />
     <Compile Include="Bootstrap\DownloadCachePluginBootstrap.cs" />
     <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
@@ -257,6 +258,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\menu\app_menu.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\xml\searchable.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

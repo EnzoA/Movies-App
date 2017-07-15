@@ -3849,6 +3849,9 @@ namespace MoviesApp.Droid
 			// aapt resource value: 0x7f060021
 			public const int application_name = 2131099681;
 			
+			// aapt resource value: 0x7f060023
+			public const int search_hint = 2131099683;
+			
 			// aapt resource value: 0x7f060022
 			public const int search_menu_icon = 2131099682;
 			
@@ -4978,6 +4981,9 @@ namespace MoviesApp.Droid
 			
 			// aapt resource value: 0x7f050000
 			public const int Empty = 2131034112;
+			
+			// aapt resource value: 0x7f050001
+			public const int searchable = 2131034113;
 			
 			static Xml()
 			{
