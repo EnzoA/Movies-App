@@ -10,7 +10,7 @@ using MoviesApp.Core.ViewModelWrappers;
 
 namespace MoviesApp.Core.ViewModels
 {
-	public class HomeViewModel : ViewModel
+	public class HomeViewModel : MoviesSearchViewModel
 	{
 		#region Bindable properties
 
@@ -29,19 +29,7 @@ namespace MoviesApp.Core.ViewModels
 				return _loadMovieGroupsCommand = _loadMovieGroupsCommand ?? new MvxCommand(() => LoadMovieGroups());
 			}
 		}
-
-		private ICommand _searchMoviesCommand;
-		public ICommand SearchMoviesCommand
-		{
-			get
-			{
-				return _searchMoviesCommand = _searchMoviesCommand ?? new MvxCommand<string>(textFilter =>
-				{
-					var x = textFilter;
-				});
-			}
-		}
-
+		
 		private bool _isBusy;
 		public bool IsBusy
 		{

@@ -78,13 +78,49 @@ namespace SAL.ServicesImplementations
 				var baseUrl = TMDbApiConfig.BASE_URL;
 				var backdropSize = TMDbApiConfig.BACKDROP_SIZE;
 				similarMovies?.ForEach(m => m.PosterPath = $"{baseUrl}{backdropSize}{m.PosterPath}");
+
+				return similarMovies;
 			}
 			catch (Exception ex)
 			{
 				throw ex;
 			}
+		}
 
-			return similarMovies;
+		public async Task<IEnumerable<Movie>> SearchMovies(string query)
+		{
+			if (string.IsNullOrEmpty(query))
+			{
+				return null;
+			}
+
+			List<Movie> filteredMovies = null;
+			var url = string.Format(ServicesManagerConfig.SEARCH_MOVIES_URL, query);
+
+			try
+			{
+				var response = await _httpClient.GetAsync(url);
+				var content = await response.Content.ReadAsStringAsync();
+				var jsonObject = JObject.Parse(content);
+				var results = jsonObject.Property("results").Value.ToString();
+
+				var settings = new JsonSerializerSettings
+				{
+					NullValueHandling = NullValueHandling.Ignore,
+					MissingMemberHandling = MissingMemberHandling.Ignore
+				};
+				filteredMovies = JsonConvert.DeserializeObject<List<Movie>>(results, settings);
+
+				var baseUrl = TMDbApiConfig.BASE_URL;
+				var backdropSize = TMDbApiConfig.BACKDROP_SIZE;
+				filteredMovies?.ForEach(m => m.PosterPath = $"{baseUrl}{backdropSize}{m.PosterPath}");
+
+				return filteredMovies;
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
 		}
 
 		#endregion
