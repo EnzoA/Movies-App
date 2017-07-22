@@ -1,7 +1,9 @@
 using Android.Content;
+
 using MvvmCross.Core.ViewModels;
-using MoviesApp.Core.MVVMSetup;
 using MvvmCross.Droid.Support.V7.AppCompat;
+
+using MoviesApp.Core.MVVMSetup;
 
 namespace MoviesApp.Droid
 {

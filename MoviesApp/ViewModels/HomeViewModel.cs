@@ -2,7 +2,9 @@
 using System.Linq;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
+
 using MvvmCross.Core.ViewModels;
+
 using SAL.Interfaces;
 using MoviesApp.Core.ViewModelWrappers;
 
@@ -27,7 +29,19 @@ namespace MoviesApp.Core.ViewModels
 				return _loadMovieGroupsCommand = _loadMovieGroupsCommand ?? new MvxCommand(() => LoadMovieGroups());
 			}
 		}
-		
+
+		private ICommand _searchMoviesCommand;
+		public ICommand SearchMoviesCommand
+		{
+			get
+			{
+				return _searchMoviesCommand = _searchMoviesCommand ?? new MvxCommand<string>(textFilter =>
+				{
+					var x = textFilter;
+				});
+			}
+		}
+
 		private bool _isBusy;
 		public bool IsBusy
 		{

@@ -3,14 +3,17 @@ using Android.Content;
 using Android.OS;
 using Android.Support.V7.Widget;
 using Android.Views;
+using static Android.Support.V7.Widget.SearchView;
+
 using MvvmCross.Droid.Support.V7.AppCompat;
+
 using MoviesApp.Core.ViewModels;
 
 namespace MoviesApp.Droid.Activities
 {
 	[Activity(Icon = "@drawable/icon",
 			  Theme = "@style/MoviesAppTheme")]
-	public class HomeActivity : MvxAppCompatActivity
+	public class HomeActivity : MvxAppCompatActivity, IOnQueryTextListener
 	{
 		public new HomeViewModel ViewModel
 		{
@@ -40,8 +43,20 @@ namespace MoviesApp.Droid.Activities
 			var searchItem = menu.FindItem(Resource.Id.menu_search);
 			var searchView = (SearchView)Android.Support.V4.View.MenuItemCompat.GetActionView(searchItem);
 			searchView.SetSearchableInfo(searchManager.GetSearchableInfo(componentName));
+			searchView.SetOnQueryTextListener(this);
 
 			return base.OnCreateOptionsMenu(menu);
+		}
+
+		public bool OnQueryTextChange(string newText)
+		{
+			ViewModel.SearchMoviesCommand.Execute(newText);
+			return true;
+		}
+
+		public bool OnQueryTextSubmit(string query)
+		{
+			return true;
 		}
 	}
 }
