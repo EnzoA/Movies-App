@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+
 using BLL.Models;
 using BLL.ExtensionMethods;
 using SAL.Interfaces;
@@ -87,18 +90,23 @@ namespace SAL.ServicesImplementations
 			}
 		}
 
-		public async Task<IEnumerable<Movie>> SearchMovies(string query)
+		public async Task<IEnumerable<Movie>> SearchMovies(string query, int searchLimit)
 		{
-			if (string.IsNullOrEmpty(query))
-			{
-				return null;
-			}
-
-			List<Movie> filteredMovies = null;
-			var url = string.Format(ServicesManagerConfig.SEARCH_MOVIES_URL, query);
-
 			try
 			{
+				if (searchLimit <= 0)
+				{
+					throw new FormatException($"{nameof(searchLimit)} must be a positive integer");
+				}
+
+				if (string.IsNullOrEmpty(query))
+				{
+					return null;
+				}
+
+				List<Movie> filteredMovies = null;
+				var url = string.Format(ServicesManagerConfig.SEARCH_MOVIES_URL, query);
+
 				var response = await _httpClient.GetAsync(url);
 				var content = await response.Content.ReadAsStringAsync();
 				var jsonObject = JObject.Parse(content);
@@ -115,7 +123,7 @@ namespace SAL.ServicesImplementations
 				var backdropSize = TMDbApiConfig.BACKDROP_SIZE;
 				filteredMovies?.ForEach(m => m.PosterPath = $"{baseUrl}{backdropSize}{m.PosterPath}");
 
-				return filteredMovies;
+				return filteredMovies.Take(searchLimit);
 			}
 			catch (Exception ex)
 			{
@@ -126,7 +134,7 @@ namespace SAL.ServicesImplementations
 		#endregion
 
 		#region Private methods
-		
+
 		private async Task<MovieGroup> GetMovieGroupAsync(string url)
 		{
 			List<Movie> movies = null;
@@ -161,7 +169,7 @@ namespace SAL.ServicesImplementations
 
 			return movieGroup;
 		}
-
+		
 		#endregion
 	}
 }

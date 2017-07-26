@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 
 using static Android.Support.V7.Widget.SearchView;
 
@@ -16,7 +15,7 @@ namespace MoviesApp.Droid.SearchableConfiguration
 		
 		public bool OnQueryTextChange(string newText)
 		{
-			_searchMoviesCommand.Execute(newText);
+			_searchMoviesCommand?.Execute(newText);
 			return true;
 		}
 

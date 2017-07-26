@@ -4,7 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <include layout="@layout/toolbar" />
+    <include
+        layout="@layout/toolbar" />
+		<Mvx.MvxListView
+				local:MvxBind="ItemsSource MoviesSearchResults;Visibility IsSearching,Converter=InvertedVisibility"
+				local:MvxItemTemplate="@layout/movies_search_result"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content" />
     <TextView
         local:MvxBind="Visibility HasThrownError, Converter=Visibility; Text ErrorMessage"
         style="@style/HomeErrorMessage" />

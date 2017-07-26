@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+
 using BLL.Models;
 
 namespace SAL.Interfaces
@@ -13,6 +14,6 @@ namespace SAL.Interfaces
 
 		Task<IEnumerable<Movie>> GetSimilarMovies(int movieId);
 
-		Task<IEnumerable<Movie>> SearchMovies(string query);
+		Task<IEnumerable<Movie>> SearchMovies(string query, int searchLimit);
 	}
 }

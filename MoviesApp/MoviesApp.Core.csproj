@@ -42,6 +42,7 @@
     <Compile Include="ViewModels\ViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModelWrappers\MovieGroupWrapper.cs" />
+    <Compile Include="ViewModelWrappers\MoviesSearchResultWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">
